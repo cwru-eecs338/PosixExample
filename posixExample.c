@@ -134,7 +134,7 @@ void *readerThread(void *threadId)
 		sem_post(&wrt);
 	}
 	sem_post(&mutex);
-
+	pthread_exit(NULL);
 }
 
 
@@ -156,6 +156,7 @@ void *writerThread(void *threadId)
 
 	//Writer Cleanup
 	sem_post(&wrt);
+	pthread_exit(NULL);
 }
 
 
